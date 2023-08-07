@@ -1,0 +1,343 @@
+:root{
+    --blue:#0f1385;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --border:.2rem soild rgba(0,0,0,.1);
+    --outline:.1rem soild rgba(0,0,0,.1);
+    --outline-hover:.2rem soild var(--black);
+}
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+html{
+    font-size: 70%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+body{
+    background: #00007515;
+}
+
+section{
+    padding:1rem 5%;
+    min-height: 100vh;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    color:black;
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover{
+    background:#3f429d;
+    color: #fff;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;                           /*header alignment */
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 1%;
+}
+
+.header .logo{
+    font-size: 85%;                         /*"touch" heading colour alignment*/
+    color:#7c80ed;         
+    font-family: 'Times New Roman';
+    font-size: 3.0rem;
+    margin-right: auto;
+}
+
+.header .logo span{
+    font-size: 95%;
+    font-family: 'Times New Roman';         /*"farmer" heading colour alignment*/
+    color:var(--blue);
+    font-size: 3.5rem;
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: var(--black);
+    text-align: center;
+}
+
+.header .navbar a:hover{
+    color:#7c80ed;           /*anvigated bars bacjground colour setting*/
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: #7c80ed;
+    color: #fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .search-form{
+    position: absolute;
+    top:110%;
+    right:-110%;
+    width: 50rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header .search-form.active{
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .search-form input{
+    height: 100%;
+    width:100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:0 1.5rem;
+}
+
+.header .search-form label{
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;    
+}
+
+.header .search-form label:hover{
+    color:#7c80ed;
+}
+
+
+.banner {
+    min-height:100vh;
+    background:url(../images/back.jpg) no-repeat;
+    background-size:cover;
+    background-position:center;
+    display:grid;
+    place-items:center;
+    padding-top:8rem;
+}
+
+.banner .content{
+    text-align:center;
+    background:#e7e0dd56;
+    border-radius:2.5rem;
+    box-shadow:#9b9896bb;
+    padding:2rem;
+    max-width:50rem;
+}
+
+.banner .content h3 {
+    font-family:'Times New Roman';
+    font-size:3.5rem;
+    color:rgb(229, 225, 225);
+    text-transform:uppercase;
+}
+
+.banner .content p {
+    font-family:'Times New Roman';
+    font-size:1.5rem;
+    color:rgb(212, 208, 208);
+    padding:1rem 0;
+    line-height:1;
+}
+
+.scout{
+    background: #eee;
+}
+
+.scout .logo{
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    color:#7c80ed;
+    text-transform:capitalize;
+}
+
+.scout .logo span{
+    color:var(--blue);
+    text-transform:capitalize; 
+}
+
+.scout .box-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.scout .box-container .box{
+    border:.1rem solid #222;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    background: #fff;
+}
+
+.scout .box-container .box:hover .image img{
+    transform: scale(1.1);
+}
+
+.scout .box-container .box .image{
+    height: 25rem;
+    overflow: hidden;
+}
+
+.scout .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+ 
+.scout .box-container .box .content{
+    padding:2rem;
+    text-align: center;
+}
+ 
+.scout .box-container .box .content h3{
+    font-size: 2.5rem;
+    color:var(--black);
+}
+ 
+.scout .box-container .box .content p{
+    font-size: 1.5rem;
+    color:var(--light-black);
+    line-height: 2;
+    padding:0.1rem 0;
+}
+ 
+.scout .load-more{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+
+footer{
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 2rem;
+    font-size: 2rem;
+    padding: 2.5rem;
+    text-align: center;
+    color: #666;
+    background: #fff;
+ }
+ 
+ footer span{
+    font-family: 'Times New Roman', Times, serif;
+    color: #2828af;
+ }
+
+
+
+
+
+
+
+/*media queries*/
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:1.5rem;
+    }
+    section {
+        padding:2rem;
+    }
+    footer{
+        flex-flow: column;
+        text-align: center;
+    }
+}
+
+
+@media (max-width:768px) {
+
+    #menu-btn {
+        display: inline-block;
+        transition: .4s linear;
+    }
+
+    .header .search-form{
+        width:90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:110%;
+        right:-110%;
+        width:30rem;
+        box-shadow:var(--box-shadow);
+        border-radius: .5rem;
+        background:#fff;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+
+    }
+
+    .footer{
+        flex-flow: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+}
